@@ -37,7 +37,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.ui.res.stringResource
 import androidx.compose.material3.Icon
-
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
+import androidx.compose.ui.res.painterResource
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,7 +80,15 @@ fun SearchBar(
 fun AlignYourBodyElement(
     modifier: Modifier = Modifier
 ) {
-    // Implement composable here
+    Column(
+        modifier = modifier
+    ) {
+        Image(
+            painter = painterResource(R.drawable.ab1_inversions),
+            contentDescription = null
+        )
+        Text(text = stringResource(R.string.ab1_inversions))
+    }
 }
 
 // Step: Favorite collection card - Material Surface

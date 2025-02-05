@@ -49,6 +49,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Surface
+import androidx.compose.foundation.layout.width
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -120,10 +121,15 @@ fun FavoriteCollectionCard(
         shape = MaterialTheme.shapes.medium,
         modifier = modifier
     ) {
-        Row {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.width(255.dp)
+        ) {
             Image(
                 painter = painterResource(R.drawable.fc2_nature_meditations),
-                contentDescription = null
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.size(80.dp)
             )
             Text(text = stringResource(R.string.fc2_nature_meditations))
         }

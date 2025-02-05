@@ -40,6 +40,9 @@ import androidx.compose.material3.Icon
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.ui.res.painterResource
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.ui.draw.clip
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,7 +88,10 @@ fun AlignYourBodyElement(
     ) {
         Image(
             painter = painterResource(R.drawable.ab1_inversions),
-            contentDescription = null
+            contentDescription = null,
+            modifier = Modifier
+                .size(88.dp)
+                .clip(CircleShape)
         )
         Text(text = stringResource(R.string.ab1_inversions))
     }
